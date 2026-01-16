@@ -9,6 +9,11 @@
 
 ---
 
+## 📢 Open to Opportunities
+**I am actively seeking a full-time role as a Software Engineer.** I am ready to apply my skills in Full-Stack development and AI integration to build impactful, scalable products.
+
+---
+
 ## 🚀 About Me
 I am a recent Computer Science graduate with a strong focus on building end-to-end applications that integrate modern AI solutions. I have a passion for creating seamless user experiences and robust backend systems.
 
