@@ -1,6 +1,3 @@
-# Siva Sagar (AKA Tony Stark | Iron Man)
-### ❤️ Loves Engineering 3000!!!
-
 **[Email](mailto:sivasagar1909@gmail.com) | [LinkedIn](https://linkedin.com/in/gsivasagar) | [GitHub](https://github.com/gsivasagar) | +91-9515710819**
 
 ---
