@@ -1,43 +1,73 @@
-**[Email](mailto:sivasagar1909@gmail.com) | [LinkedIn](https://linkedin.com/in/gsivasagar) | [GitHub](https://github.com/gsivasagar) | +91-9515710819**
+# React + TypeScript + Vite
 
----
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## 📢 Open to Opportunities
-**Actively seeking a Full-Time Software Engineer.** I am ready to build and scale Full-Stack and AI-driven applications.
+Currently, two official plugins are available:
 
----
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## 🚀 Technical Profile
-- 🎓 **2024 Graduate:** B.Tech in Computer Science & Systems Engineering.
-- 💡 **Problem Solver:** **400+ algorithmic problems** solved.
-- 🏗️ **Full-stack & AI Builder:** Experienced in **RAG pipelines**, **LLM fine-tuning**, **Full-stack applications** and **browser extensions**.
+## React Compiler
 
-### 🛠 Tech Stack
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-| Category | Skills |
-| :--- | :--- |
-| **Frontend** | React, TypeScript, JavaScript (ES6+), Tailwind CSS, Streamlit |
-| **Backend** | Python (FastAPI, Flask), Java (JSP), RESTful APIs |
-| **AI & Data** | NLP (LLM Fine-tuning), RAG (ChromaDB), Transformers, Image Processing (OpenCV) |
-| **Databases** | PostgreSQL, MySQL, SQLite, ChromaDB (Vector DB) |
-| **Dev Tools** | Git, Ollama, Chrome Extension APIs, Postman, Apache Tomcat |
+## Expanding the ESLint configuration
 
----
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-## 🌟 Key Projects
+```js
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
 
-### **AI-Powered Exam Q&A Generator**
-- Built a RAG pipeline using **ChromaDB** and a fine-tuned **TinyLlama** model for offline AI quiz generation.
+      // Remove tseslint.configs.recommended and replace with this
+      tseslint.configs.recommendedTypeChecked,
+      // Alternatively, use this for stricter rules
+      tseslint.configs.strictTypeChecked,
+      // Optionally, add this for stylistic rules
+      tseslint.configs.stylisticTypeChecked,
 
-### **LeetCode AI Assistant**
-- Developed a **React/TypeScript** Chrome extension integrated with the **Gemini API** for real-time coding feedback.
+      // Other configs...
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
+```
 
-### **Mock Interview AI**
-- Architected a voice-interactive app using **WebRTC** and the **WebSpeech API** to simulate AI-led interviews.
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
----
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
 
-## 💼 Experience
-**Software Engineering Intern | HPCL ISC** (*Nov 2022 – Apr 2023*)
-- Built a full-stack Inventory Management System using **Java (JSP)** and **PostgreSQL**.
-- Optimised data flow via **Apache Tomcat**, reducing inventory discrepancies through real-time updates.
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+      // Enable lint rules for React
+      reactX.configs['recommended-typescript'],
+      // Enable lint rules for React DOM
+      reactDom.configs.recommended,
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
+```
