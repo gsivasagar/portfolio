@@ -99,27 +99,28 @@ export const projects: Project[] = [
 export interface Skill {
   name: string;
   used: string;
+  icon?: string;
 }
 
 export const skills: Skill[] = [
-  { name: 'Python', used: 'Pulse, QuizForge, Bull vs Bear' },
-  { name: 'FastAPI', used: 'Pulse backend, QuizForge API, Bull vs Bear' },
-  { name: 'TypeScript', used: 'QuizForge front end, MemberBerries' },
-  { name: 'React', used: 'QuizForge, Bull vs Bear' },
-  { name: 'Next.js', used: 'MemberBerries' },
-  { name: 'Java', used: 'HPCL internship, DSA practice' },
+  { name: 'Python', used: 'Pulse, QuizForge, Bull vs Bear', icon: 'python' },
+  { name: 'FastAPI', used: 'Pulse backend, QuizForge API, Bull vs Bear', icon: 'fastapi' },
+  { name: 'TypeScript', used: 'QuizForge front end, MemberBerries', icon: 'typescript' },
+  { name: 'React', used: 'QuizForge, Bull vs Bear', icon: 'react' },
+  { name: 'Next.js', used: 'MemberBerries', icon: 'nextdotjs' },
+  { name: 'Java', used: 'HPCL internship, DSA practice', icon: 'openjdk' },
   { name: 'SQL', used: 'Pulse ingestion, HPCL query tuning' },
-  { name: 'PostgreSQL', used: 'Pulse, HPCL, MemberBerries' },
-  { name: 'Supabase', used: 'MemberBerries auth and realtime' },
-  { name: 'Docker', used: 'Bull vs Bear' },
-  { name: 'LangGraph', used: 'Bull vs Bear agents' },
+  { name: 'PostgreSQL', used: 'Pulse, HPCL, MemberBerries', icon: 'postgresql' },
+  { name: 'Supabase', used: 'MemberBerries auth and realtime', icon: 'supabase' },
+  { name: 'Docker', used: 'Bull vs Bear', icon: 'docker' },
+  { name: 'LangGraph', used: 'Bull vs Bear agents', icon: 'langgraph' },
   { name: 'RAG', used: 'QuizForge' },
   { name: 'ChromaDB', used: 'QuizForge retrieval' },
-  { name: 'Gemini API', used: 'QuizForge, Bull vs Bear' },
-  { name: 'JWT Auth', used: 'QuizForge accounts' },
+  { name: 'Gemini API', used: 'QuizForge, Bull vs Bear', icon: 'googlegemini' },
+  { name: 'JWT Auth', used: 'QuizForge accounts', icon: 'jsonwebtokens' },
   { name: 'SSE', used: 'Bull vs Bear live progress' },
-  { name: 'pytest', used: 'QuizForge back-end tests' },
-  { name: 'Vitest', used: 'QuizForge, MemberBerries' },
-  { name: 'JUnit', used: 'HPCL internship' },
-  { name: 'GitHub Actions', used: 'QuizForge CI' },
+  { name: 'pytest', used: 'QuizForge back-end tests', icon: 'pytest' },
+  { name: 'Vitest', used: 'QuizForge, MemberBerries', icon: 'vitest' },
+  { name: 'JUnit', used: 'HPCL internship', icon: 'junit5' },
+  { name: 'GitHub Actions', used: 'QuizForge CI', icon: 'githubactions' },
 ];
