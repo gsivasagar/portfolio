@@ -5,12 +5,9 @@ const About: React.FC = () => (
   <section id="about" className="screen about">
     <h3 className="section-title">About</h3>
     <motion.div className="about-inner" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
-      <div className="about-card" aria-hidden="true">
-        <span className="about-big">0.89<br />0.37</span>
-        <span className="about-cap">my retrieval score on short notes, then on real papers. I publish both.</span>
-      </div>
+      <img className="about-photo" src={`${import.meta.env.BASE_URL}about.jpg`} alt="Siva Sagar standing in front of tea hills" width={360} height={480} loading="lazy" />
       <div className="about-copy">
-        <h4>A <span className="u">little</span> background</h4>
+        <h4>Here is a <span className="u">little</span> background</h4>
         <p>
           I’m a backend and AI engineer. I graduated in Computer Science from Andhra University in 2024 and I’m now a
           software engineering intern at ArcStream Technologies in Hyderabad. There I write the Python and FastAPI
