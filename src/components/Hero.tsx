@@ -1,32 +1,38 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useTypewriter } from '../useTypewriter';
+import { links } from '../data';
+
+const words = [
+  "Hi, the name's Siva Sagar",
+  'I build FastAPI backends',
+  'I measure AI before I claim it',
+  'Open to backend and AI roles',
+];
 
 const Hero: React.FC = () => {
-    return (
-        <section id="about" className="section" style={{ scrollMarginTop: '6rem' }}>
-            <div className="mobile-section-header">About</div>
-
-            <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-                style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}
-            >
-                <p>
-                    Back in 2022, I started exploring the mechanics of how complex software systems operate under the hood. Fast forward to today, and I've had the privilege of architecting solutions ranging from <span style={{ color: 'var(--text-primary)', fontWeight: 500 }}>real-time financial synchronization engines</span> to <span style={{ color: 'var(--text-primary)', fontWeight: 500 }}>AI-powered recruitment simulators</span>.
-                </p>
-
-                <p>
-                    My main focus these days is building <span style={{ color: 'var(--text-primary)', fontWeight: 500 }}>fault-tolerant microservices</span> and rigorous data processing pipelines. I enjoy the challenge of bridging the gap between cutting-edge AI architectures (like LangGraph and Vector Databases) and robust, production-ready enterprise backends.
-                </p>
-
-                <p>
-                    When I'm not carefully constructing database schemas or debugging state machines, I'm usually solving algorithmic challenges on LeetCode, optimizing my personal workflows, or continuing my lifelong pursuit of learning new system design strategies.
-                </p>
-
-            </motion.div>
-        </section>
-    );
+  const text = useTypewriter(words);
+  return (
+    <section id="hero" className="screen hero">
+      <div className="circles" aria-hidden="true">
+        <span className="ring r1" /><span className="ring r2" /><span className="ring r3" /><span className="ring r4" /><span className="ring r5" />
+      </div>
+      <motion.img className="avatar" src={`${import.meta.env.BASE_URL}profile.jpg`} alt="Siva Sagar" width={160} height={160} initial={{ scale: 0.6, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ duration: 0.8 }} />
+      <div className="hero-text">
+        <h2 className="eyebrow">Backend and AI Engineer</h2>
+        <h1 aria-label={words[0]}>
+          <span>{text}</span><span className="cursor" aria-hidden="true">|</span>
+        </h1>
+        <nav className="hero-nav" aria-label="Sections">
+          <a href="#about" className="pill">About</a>
+          <a href="#experience" className="pill">Experience</a>
+          <a href="#skills" className="pill">Skills</a>
+          <a href="#projects" className="pill">Projects</a>
+          <a href={links.resume} target="_blank" rel="noopener noreferrer" className="pill pill-solid">Résumé</a>
+        </nav>
+      </div>
+    </section>
+  );
 };
 
 export default Hero;
